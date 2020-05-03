@@ -40,3 +40,17 @@ EXEC spChangeStatus 'Nick', 'Snow', 5;
 EXEC spChangeStatus 'Daisy', 'Skye', 7;
 select OpeningNumber from JobOpenings;
 select statusId from Candidates where candidateId = 2 or candidateId = 6;
+
+-- test trigger CalculateTotalCost
+SELECT * FROM Reimbursement;
+INSERT INTO Reimbursement (airlineId, carId, hotelId) VALUES (3,3,3);
+SELECT * FROM Reimbursement;
+
+-- test the procedure of complain
+select * from Candidates WHERE candidateId = 1;
+
+EXEC spComplain 'Flora', 'Tully', 9;
+
+select * from Candidates WHERE candidateId = 1;
+
+
